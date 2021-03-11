@@ -1,0 +1,72 @@
+#imagenorder {
+    height: 235px;
+    size: 80%;
+    margin-left: 40px;
+    margin-top: 40px;
+    display: inline-block;
+    margin-right: 0px;
+  }
+  body {
+    background-color: #9c4f00;
+  }
+  .infopaginaorders {
+    display: block;
+    text-align: center;
+    font-size: 200%;
+    font-family: cursive;
+    font-weight: bold;
+    background-color: #9c4f00;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .image-space {
+    float: left;
+    margin-right: 20px;
+    height: 150px;
+    width: 150px;
+  }
+  
+  #articles-reservas {
+    display: block;
+    width: 1200px;
+    margin-left: 120px;
+    margin-bottom: 10px;
+  }
+  
+  #articles-alquileres {
+    display: block;
+    width: 1200px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .orderstitle {
+    text-align: center;
+    margin-top: 20px;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: x-large;
+  }
+  .subtitlerow {
+    margin-left: 48px;
+    margin-right: 54px;
+  }
+  
+  .article-item-order {
+    display: block;
+    height: 160px;
+    background-color: hsl(30, 70%, 52%);
+    margin-bottom: 6px;
+    padding: 0px;
+    width: 600px;
+    border: rgb(90, 45, 0) solid 3px;
+    border-radius: 2em;
+  }
+  .article-item-order h2 {
+    color: rgb(90, 45, 0);
+    border-bottom: rgb(90, 45, 0) solid 2px;
+  }
+  .article-item h4 {
+    margin-bottom: 10px;
+  }
+  

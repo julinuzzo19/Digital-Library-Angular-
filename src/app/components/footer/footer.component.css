@@ -1,0 +1,16 @@
+.footer {
+    text-align: center;
+    color: #643403 !important;
+    font-weight: bold;
+    margin: 0;
+    border-top: hsl(30, 86%, 26%) solid 3px;
+    border-bottom: hsl(30, 86%, 26%) solid 3px;
+    background-color: hsl(30, 70%, 52%);
+
+  
+  }
+  .footer p {
+    margin: 0;
+  }
+
+  

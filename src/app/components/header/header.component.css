@@ -1,0 +1,26 @@
+#imgheader {
+    width: 70vw;
+    height: 30vh;
+  }
+  
+  .titlecliente {
+    font-size: 150%;
+    font-family: cursive;
+    color: black;
+  }
+  .btn {
+    margin-top: 12px;
+  }
+  .btn-info,
+  .btn-danger {
+    background-color: chocolate;
+    border: chocolate solid 1px;
+    color: black;
+    font-weight: bold;
+  }
+  .row {
+    overflow-x: hidden;
+    background-color: #9c4f00;
+    margin: 0px;
+    padding: 0px;
+  }

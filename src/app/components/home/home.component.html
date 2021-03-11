@@ -1,0 +1,43 @@
+<body>
+    
+
+<div><h2 class="infopagina">Catálogo de libros</h2></div>
+
+<div class="container-fluid">
+    <div class="row" >
+      <div class="col-4 d-inline-block text-center">
+      <img id="imgsearchbook" src="../assets/images/searchbookimg.png" >
+        <div class="container"> 
+          <form id="formsearchbook">
+            <div class="form-group">
+              <label id="titleform" class="label display-1" for="formGroupExampleInput">Ingrese Titulo o Autor del libro:</label>
+              <input id="tituloautor"  type="text" class="form-control"  placeholder="Titulo o Autor">        
+              <div class="form-check-inline">
+                <label class="form-check-label"> Buscar por :
+                    <input type="radio" class="form-check-input" id="inputtitulo" name="optradio" value="titulo" 
+                         checked>Titulo
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" id="inputautor" name="optradio" value="autor" >Autor
+                </label>
+            </div>
+             
+              <input class="btn btn-primary" id="btnsearch" type="submit" value="Buscar">
+            </div>
+            
+        </form>
+        </div>
+      </div>
+      
+      
+      
+      <div class="col-8">         
+       <div class="articles" id="articles"></div>
+      </div>
+       <!--LIMPIAR FLOTADOS-->
+       <div class="clearfix"></div>
+    </div>
+  </div>
+</body>
