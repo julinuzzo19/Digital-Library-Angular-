@@ -2,7 +2,7 @@ export class Alquiler {
   constructor(
     public clienteId: number,
     public isbn: string,
-    public fechareserva: Date,
-    public fechaalquiler: Date
+    public fechareserva: string,
+    public fechaalquiler: string
   ) {}
 }

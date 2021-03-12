@@ -42,9 +42,9 @@
           <h4>{{item.autor}}</h4>
           <h5>{{item.editorial}}</h5>
   
-    <input type="button" id="{{item.isbn}}" name="btnalquiler" class="btn btnalquiler" value="Alquilar">
+    <input (click)="alquilar(item.isbn);" type="button" id="{{item.isbn}}" name="btnalquiler" class="btn btnalquiler" value="Alquilar">
     <br>
-     <input type="button" id="{{item.isbn}}"  class="btn btnreserva" name="btnreserva" value="Reservar">
+     <input (click)="reservar(item.isbn);" type="button" id="{{item.isbn}}"  class="btn btnreserva" name="btnreserva" value="Reservar">
     </article>
        </div>
       </div>

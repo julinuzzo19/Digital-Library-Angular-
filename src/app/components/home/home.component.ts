@@ -3,6 +3,7 @@ import {} from '../../services/LibroService';
 import { URL_API_LIBROS } from '../../models/Constants';
 import { Libro } from '../../models/Libro';
 import { HttpClient } from '@angular/common/http';
+import {alquilarLibro,reservarLibro} from '../../services/AlquilerService';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,17 @@ export class HomeComponent implements OnInit {
   getLibros() {
     this.HttpClient.get<any>(URL_API_LIBROS).subscribe((response) => {
       this.libros = response;
-      console.log(this.libros);
     });
+  }
+
+  alquilar(isbn:string)
+  {
+    alquilarLibro(isbn);
+  }
+
+  reservar(isbn:string)
+  {
+    reservarLibro(isbn);
+
   }
 }
