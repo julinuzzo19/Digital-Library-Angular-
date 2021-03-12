@@ -8,19 +8,19 @@
       <div class="col-4 d-inline-block text-center">
       <img id="imgsearchbook" src="../assets/images/searchbookimg.png" >
         <div class="container"> 
-          <form id="formsearchbook">
+          <form  #SearchForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label id="titleform" class="label display-1" for="formGroupExampleInput">Ingrese Titulo o Autor del libro:</label>
-              <input id="tituloautor"  type="text" class="form-control"  placeholder="Titulo o Autor">        
+              <input  type="text" class="form-control" #busqueda="ngModel" [(ngModel)]="form.busqueda" name="busqueda"   placeholder="Titulo o Autor">        
               <div class="form-check-inline">
                 <label class="form-check-label"> Buscar por :
-                    <input type="radio" class="form-check-input" id="inputtitulo" name="optradio" value="titulo" 
+                    <input type="radio" class="form-check-input" #titulo="ngModel" [(ngModel)]="form.titulo" name="optradio" value="titulo" 
                          checked>Titulo
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" id="inputautor" name="optradio" value="autor" >Autor
+                    <input type="radio" class="form-check-input" #autor="ngModel"  [(ngModel)]="form.autor" name="optradio" value="autor" >Autor
                 </label>
             </div>
              

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {} from '../../services/LibroService';
+import {getLibrosByInput} from '../../services/LibroService';
 import { URL_API_LIBROS } from '../../models/Constants';
 import { Libro } from '../../models/Libro';
 import { HttpClient } from '@angular/common/http';
@@ -12,8 +12,18 @@ import {alquilarLibro,reservarLibro} from '../../services/AlquilerService';
 })
 export class HomeComponent implements OnInit {
   public libros: Libro[];
+  public form:any;
+  public lista:any;
 
-  constructor(private HttpClient: HttpClient) {}
+  constructor(private HttpClient: HttpClient) {
+
+    this.form={
+      busqueda:'',
+      autor:'',
+      titulo:''
+    }
+
+  }
 
   ngOnInit(): void {
     this.getLibros();
@@ -35,4 +45,23 @@ export class HomeComponent implements OnInit {
     reservarLibro(isbn);
 
   }
+
+  async onSubmit()
+  { 
+    
+    
+    if (this.form.busqueda!='' && this.form.autor!='') {
+     this.libros= await getLibrosByInput(this.form.busqueda,this.form.autor);
+     this.form.autor=''; 
+    }
+    else {
+      this.libros= await getLibrosByInput(this.form.busqueda,this.form.titulo); 
+      this.form.titulo=''; 
+    }
+    
+   
+  }
+
+
+
 }

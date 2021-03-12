@@ -1,12 +1,12 @@
-import * as constants from "../models/Constants";
-import {Alquiler}from "../models/Alquiler";
+import * as constants from '../models/Constants';
+import { Alquiler } from '../models/Alquiler';
 
 export function PostAlquiler(alquilerjson) {
   fetch(constants.URL_API_ALQUILERES, {
-    method: "POST",
+    method: 'POST',
     body: alquilerjson,
     headers: {
-      "Content-Type": "application/json;charset=UTF-8",
+      'Content-Type': 'application/json;charset=UTF-8',
     },
   })
     .then((response) => response.json())
@@ -16,7 +16,7 @@ export function PostAlquiler(alquilerjson) {
     .catch((err) => console.log(err));
 }
 
-export function GetAlquiler(clienteid) {
+export function getAlquiler(clienteid) {
   fetch(constants.URL_API_ALQUILERES_CLIENTES + clienteid, {})
     .then((response) => response.json())
     .then((data) => {
@@ -26,9 +26,9 @@ export function GetAlquiler(clienteid) {
 
 export function MostrarAlquileres(lista) {
   for (let i of lista) {
-    if (i.fechaReserva == "") {
-      const place = document.getElementById("articles-alquileres");
-      const element = document.createElement("div");
+    if (i.fechaReserva == '') {
+      const place = document.getElementById('articles-alquileres');
+      const element = document.createElement('div');
       var fila = i;
 
       var fechaalquiler = fila.fechaAlquiler.substring(0, 9);
@@ -52,8 +52,8 @@ export function MostrarAlquileres(lista) {
         place.appendChild(element);
       }
     } else {
-      const place = document.getElementById("articles-reservas");
-      const element = document.createElement("div");
+      const place = document.getElementById('articles-reservas');
+      const element = document.createElement('div');
       var fila = i;
       var fechareserva = fila.fechaReserva.substring(0, 9);
 
@@ -77,29 +77,28 @@ export function MostrarAlquileres(lista) {
 }
 
 export var alquilarLibro = function (isbn) {
+  var fechaActual = new Date();
+  var dia = fechaActual.getDate();
+  var mes = fechaActual.getMonth() + 1;
+  var año = fechaActual.getFullYear();
 
-    var fechaActual= new Date();
-    var dia= fechaActual.getDate();
-    var mes= fechaActual.getMonth()+1;
-    var año= fechaActual.getFullYear();
-    
-    var fechaAlquiler: string= dia+"/"+mes+"/"+año;
-  
-  var alquiler = new Alquiler(1, isbn, "", fechaAlquiler);
+  var fechaAlquiler: string = dia + '/' + mes + '/' + año;
+
+  var alquiler = new Alquiler(1, isbn, '', fechaAlquiler);
   var alquilerjson = JSON.stringify(alquiler);
 
   PostAlquiler(alquilerjson);
 };
 
 export var reservarLibro = function (isbn) {
-    var fechaActual= new Date();
-    var dia= fechaActual.getDate();
-    var mes= fechaActual.getMonth()+1;
-    var año= fechaActual.getFullYear();
-    
-    var fechaReserva: string= dia+"/"+mes+"/"+año;
+  var fechaActual = new Date();
+  var dia = fechaActual.getDate();
+  var mes = fechaActual.getMonth() + 1;
+  var año = fechaActual.getFullYear();
 
-  var reserva = new Alquiler(1, isbn, fechaReserva, "");
+  var fechaReserva: string = dia + '/' + mes + '/' + año;
+
+  var reserva = new Alquiler(1, isbn, fechaReserva, '');
   var reservajson = JSON.stringify(reserva);
 
   PostAlquiler(reservajson);

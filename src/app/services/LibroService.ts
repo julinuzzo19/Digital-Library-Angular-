@@ -1,11 +1,11 @@
-import * as Constants from '../models/Constants';
+import {URL_API_LIBROS} from '../models/Constants';
+import {Libro} from '../models/Libro';
 
-
-export async function getlibrosbyinput(tituloautor, check) {
+export async function getLibrosByInput(tituloautor, check) {
   let regex = /\w[tituloautor]+/;
-  let libros = [];
+    var libros:any[]=[];
 
-  var URL_GET = Constants.URL_API_LIBROS;
+  var URL_GET = URL_API_LIBROS;
 
   if (check == 'titulo') {
     URL_GET = URL_GET + `?titulo=${tituloautor}`;
@@ -22,5 +22,6 @@ export async function getlibrosbyinput(tituloautor, check) {
         }
       }
     });
+
   return libros;
 }
