@@ -32,12 +32,23 @@
       </div>
       
       
-      
-      <div class="col-8">         
-       <div class="articles" id="articles"></div>
+     <!--  Listado de libros -->
+      <div class="col-8" >          
+       <div class="articles" id="articles" *ngFor="let item of libros">
+
+        <article class="article-item" *ngIf="item.stock>0">
+          <div class="image-space"> <img class="image-libro" src="{{item.imagen}}" alt=""></div>
+          <h2>{{item.titulo}}</h2>
+          <h4>{{item.autor}}</h4>
+          <h5>{{item.editorial}}</h5>
+  
+    <input type="button" id="{{item.isbn}}" name="btnalquiler" class="btn btnalquiler" value="Alquilar">
+    <br>
+     <input type="button" id="{{item.isbn}}"  class="btn btnreserva" name="btnreserva" value="Reservar">
+    </article>
+       </div>
       </div>
-       <!--LIMPIAR FLOTADOS-->
-       <div class="clearfix"></div>
+       
     </div>
   </div>
 </body>
