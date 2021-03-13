@@ -80,10 +80,14 @@
   font-family: cursive;
   background-color: chocolate !important;
 }
-#btnsearch {
+.btnsearch {
   font-size: large;
   width: 130px;
   background-color: chocolate !important;
+  margin-top: 10px;
+  border-color: #9c4f00;
+  color:rgb(110, 59, 8);
+  font-weight: bold;
 }
 .clearfix {
   clear: both;

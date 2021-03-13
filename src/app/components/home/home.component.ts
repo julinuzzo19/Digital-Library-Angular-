@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {getLibrosByInput} from '../../services/LibroService';
+import { getLibrosByInput } from '../../services/LibroService';
 import { URL_API_LIBROS } from '../../models/Constants';
 import { Libro } from '../../models/Libro';
 import { HttpClient } from '@angular/common/http';
-import {alquilarLibro,reservarLibro} from '../../services/AlquilerService';
+import { alquilarLibro, reservarLibro } from '../../services/AlquilerService';
 
 @Component({
   selector: 'app-home',
@@ -12,17 +12,14 @@ import {alquilarLibro,reservarLibro} from '../../services/AlquilerService';
 })
 export class HomeComponent implements OnInit {
   public libros: Libro[];
-  public form:any;
-  public lista:any;
+  public form: any;
 
   constructor(private HttpClient: HttpClient) {
-
-    this.form={
-      busqueda:'',
-      autor:'',
-      titulo:''
-    }
-
+    this.form = {
+      busqueda: '',
+      autor: '',
+      titulo: '',
+    };
   }
 
   ngOnInit(): void {
@@ -35,33 +32,24 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  alquilar(isbn:string)
-  {
+  alquilar(isbn: string) {
     alquilarLibro(isbn);
   }
 
-  reservar(isbn:string)
-  {
+  reservar(isbn: string) {
     reservarLibro(isbn);
-
   }
 
-  async onSubmit()
-  { 
-    
-    
-    if (this.form.busqueda!='' && this.form.autor!='') {
-     this.libros= await getLibrosByInput(this.form.busqueda,this.form.autor);
-     this.form.autor=''; 
+  async onSubmit() {
+    if (this.form.busqueda != '' && this.form.autor != '') {
+      this.libros = await getLibrosByInput(this.form.busqueda, this.form.autor);
+      this.form.autor = '';
+    } else {
+      this.libros = await getLibrosByInput(
+        this.form.busqueda,
+        this.form.titulo
+      );
+      this.form.titulo = '';
     }
-    else {
-      this.libros= await getLibrosByInput(this.form.busqueda,this.form.titulo); 
-      this.form.titulo=''; 
-    }
-    
-   
   }
-
-
-
 }
