@@ -87,6 +87,7 @@ export var alquilarLibro = function (isbn) {
   var alquiler = new Alquiler(1, isbn, '', fechaAlquiler);
   var alquilerjson = JSON.stringify(alquiler);
 
+  console.log(alquilerjson);
   PostAlquiler(alquilerjson);
 };
 
